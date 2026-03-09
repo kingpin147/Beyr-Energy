@@ -1,157 +1,170 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Target, Eye, ShieldCheck, Zap, Users, Globe, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, Target, Eye, Award, Users, CheckCircle2 } from "lucide-react";
 
-const stats = [
-  { label: "Years Experience", value: "25+" },
-  { label: "Global Projects", value: "100+" },
-  { label: "Expert Engineers", value: "40+" },
-  { label: "MW Managed", value: "80+" },
-];
+export const metadata: Metadata = {
+  title: "About Us | Beyond Rental — BEYR Energy Dubai",
+  description:
+    "Learn about Beyond Rental of Alternative Energy Equipment LLC (BEYR Energy) — Dubai's leading industrial-grade BESS, solar hybrid, and temporary power rental company serving the UAE & GCC.",
+};
 
 const values = [
-  {
-    title: "Engineering Excellence",
-    description: "We don't just rent; we engineer. Every solution is backed by deep technical expertise.",
-    icon: <Zap className="w-8 h-8" />
-  },
-  {
-    title: "Safety First",
-    description: "Zero-compromise approach to safety protocols and equipment reliability.",
-    icon: <ShieldCheck className="w-8 h-8" />
-  },
-  {
-    title: "Sustainable Future",
-    description: "Pioneering the transition to clean, hybrid energy systems across the GCC.",
-    icon: <Globe className="w-8 h-8" />
-  }
+  { icon: Target, title: "Reliability First", desc: "We guarantee uptime with certified, maintained equipment and 24/7 support teams on standby." },
+  { icon: Award, title: "Industrial Grade Only", desc: "We never compromise. Every unit in our fleet meets international IEC and CE standards." },
+  { icon: Users, title: "Client-Centric", desc: "Flexible rental terms, dedicated account managers, and custom solutions for every client." },
+  { icon: Eye, title: "Sustainability Driven", desc: "Helping GCC industries transition to cleaner, more efficient energy systems through rentals." },
+];
+
+const milestones = [
+  { year: "2022", event: "BEYR Energy founded in Dubai, UAE" },
+  { year: "2023", event: "First BESS fleet deployed across UAE construction sector" },
+  { year: "2024", event: "Expanded to KSA, Qatar & Oman — GCC regional coverage" },
+  { year: "2025", event: "500+ MW deployed. Solar hybrid fleet launch" },
+  { year: "2026", event: "Multi-MW peak shaving & smart grid portfolio launched" },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col">
-      {/* Subpage Hero */}
-      <section className="relative pt-64 pb-24 bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/hero-bess.png" alt="About Hero" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary-dark"></div>
-        </div>
-        <div className="container relative z-10 text-center">
-           <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-1 rounded-full bg-accent/20 text-accent text-xs font-black uppercase tracking-widest mb-6"
-           >
-              Established 1998
-           </motion.div>
-           <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-white mb-8"
-           >
-              Beyond Rental. <span className="text-accent italic">Beyond Limits.</span>
-           </motion.h1>
-           <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-white/60 text-xl max-w-2xl mx-auto leading-relaxed"
-           >
-              Leading the GCC in premium alternative energy rental solutions with 
-              an engineering-first approach to complex power challenges.
-           </motion.p>
+    <div className="bg-white">
+      {/* Page Hero */}
+      <section className="page-hero">
+        <div className="absolute inset-0 bg-dark-grid" />
+        <div className="glow-dot w-96 h-96 bg-energy top-0 right-0 opacity-10" />
+        <div className="container-wide relative z-10">
+          <div className="section-label">
+            <span className="w-8 h-px bg-energy" />
+            About BEYR Energy
+          </div>
+          <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight max-w-3xl mb-6">
+            The GCC's Trusted{" "}
+            <span className="text-gradient-green">Energy Rental Partner</span>
+          </h1>
+          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
+            Beyond Rental of Alternative Energy Equipment LLC — where industrial reliability meets sustainable energy innovation.
+          </p>
         </div>
       </section>
 
-      {/* Core Mission/Vision */}
-      <section className="section-padding bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative">
-               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative">
-                  <Image src="/hero-bess.png" alt="Mission" fill className="object-cover" />
-               </div>
-               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent rounded-[3rem] flex flex-col items-center justify-center p-8 shadow-2xl border-8 border-white hidden md:flex">
-                  <Users size={48} className="text-primary mb-4" />
-                  <span className="text-primary font-black text-center leading-tight uppercase tracking-tighter text-xl">Driven by Expert Engineers</span>
-               </div>
+      {/* Main Story */}
+      <section className="py-20 lg:py-28">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="section-label">
+                <span className="w-8 h-px bg-energy" />
+                Our Story
+              </div>
+              <h2 className="section-title mb-6">
+                Powering the GCC,{" "}
+                <span className="text-gradient-green">One Project at a Time</span>
+              </h2>
+              <p className="text-gray-500 leading-relaxed mb-4">
+                Beyond Rental (BEYR Energy) was founded with a single mission: to make premium alternative energy equipment accessible to every industrial project across the UAE and GCC — without the burden of capital expenditure.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-4">
+                Based in Dubai, we operate a growing fleet of containerised BESS units, solar-diesel hybrid systems, and temporary power solutions — all available for short and long-term rental with full technical support.
+              </p>
+              <p className="text-gray-500 leading-relaxed">
+                Our clients include leading construction firms, oil & gas operators, industrial manufacturers, event organizers, and utility companies. Every deployment is backed by our 24/7 monitoring center and experienced field engineers.
+              </p>
             </div>
-
-            <div className="flex flex-col">
-               <h2 className="mb-12 font-black leading-tight">We are redefining the <span className="text-accent">energy landscape</span> in the GCC.</h2>
-               
-               <div className="flex flex-col gap-10 mb-12">
-                  <div className="flex gap-6 group">
-                     <div className="w-16 h-16 shrink-0 rounded-2xl bg-surface-light text-accent flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
-                        <Target size={32} />
-                     </div>
-                     <div>
-                        <h4 className="text-2xl font-black mb-3 italic">Our Mission</h4>
-                        <p className="text-foreground-muted">To provide seamless, reliable, and sustainable energy solutions that empower industrial growth while minimizing environmental impact.</p>
-                     </div>
+            {/* Stats panel */}
+            <div className="bg-hero-gradient rounded-3xl p-10 relative overflow-hidden">
+              <div className="absolute inset-0 bg-dark-grid" />
+              <div className="relative z-10 grid grid-cols-2 gap-8">
+                {[
+                  { v: "500+", l: "MW Deployed" },
+                  { v: "100+", l: "Projects Completed" },
+                  { v: "6+", l: "GCC Countries Served" },
+                  { v: "24/7", l: "Technical Support" },
+                ].map((s) => (
+                  <div key={s.l} className="text-center">
+                    <div className="text-4xl font-display font-black text-energy mb-1">{s.v}</div>
+                    <div className="text-gray-400 text-sm font-medium">{s.l}</div>
                   </div>
-
-                  <div className="flex gap-6 group">
-                     <div className="w-16 h-16 shrink-0 rounded-2xl bg-surface-light text-accent flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
-                        <Eye size={32} />
-                     </div>
-                     <div>
-                        <h4 className="text-2xl font-black mb-3 italic">Our Vision</h4>
-                        <p className="text-foreground-muted">To be the primary GCC partner for innovative hybrid power rentals, leading the transition toward a zero-emission industrial future.</p>
-                     </div>
-                  </div>
-               </div>
-
-               <Link href="/contact" className="btn-primary w-fit translate-y-0">
-                  Partner With Us <ArrowRight size={18} />
-               </Link>
+                ))}
+              </div>
+              <div className="relative z-10 mt-8 pt-8 border-t border-white/10 text-center">
+                <p className="text-energy font-bold italic text-sm">"Reliable Energy. When You Need It."</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Numerical Impact */}
-      <section className="section-padding bg-primary text-white relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
-            {stats.map((s, i) => (
-              <div key={i} className="text-center group">
-                <div className="text-5xl lg:text-7xl font-black text-accent mb-4 tracking-tighter group-hover:scale-110 transition-transform duration-500">
-                  {s.value}
+      {/* Values */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-wide">
+          <div className="text-center mb-14">
+            <div className="section-label justify-center">
+              <span className="w-8 h-px bg-energy" />
+              Our Values
+              <span className="w-8 h-px bg-energy" />
+            </div>
+            <h2 className="section-title">What Drives Us</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v) => (
+              <div key={v.title} className="solution-card text-center group">
+                <div className="w-14 h-14 rounded-2xl bg-energy/10 border border-energy/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-energy/20 transition-colors">
+                  <v.icon className="w-7 h-7 text-energy" />
                 </div>
-                <div className="text-white/50 font-bold uppercase tracking-[0.2em] text-xs">
-                  {s.label}
-                </div>
+                <h3 className="font-display font-bold text-navy-900 text-base mb-3">{v.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values Grid */}
-      <section className="section-padding">
-         <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-               <div className="text-accent font-black uppercase tracking-[0.3em] text-[13px] mb-4">Our DNA</div>
-               <h2 className="font-black">The values that power <br /><span className="text-accent italic underline">Every project.</span></h2>
+      {/* Timeline */}
+      <section className="py-20 lg:py-28">
+        <div className="container-wide">
+          <div className="text-center mb-14">
+            <div className="section-label justify-center">
+              <span className="w-8 h-px bg-energy" />
+              Our Journey
+              <span className="w-8 h-px bg-energy" />
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               {values.map((v, i) => (
-                 <div key={i} className="p-10 rounded-[3rem] bg-surface-light border border-border hover:bg-white hover:shadow-premium transition-all flex flex-col items-center text-center group">
-                    <div className="w-20 h-20 rounded-3xl bg-white text-primary flex items-center justify-center mb-8 shadow-sm group-hover:bg-accent group-hover:scale-110 transition-all">
-                       {v.icon}
-                    </div>
-                    <h4 className="text-2xl font-black mb-6 italic">{v.title}</h4>
-                    <p className="text-foreground-muted leading-relaxed">{v.description}</p>
-                 </div>
-               ))}
+            <h2 className="section-title">From Launch to GCC Leader</h2>
+          </div>
+          <div className="max-w-2xl mx-auto relative">
+            <div className="absolute left-[72px] top-0 bottom-0 w-px bg-gradient-to-b from-energy via-energy/50 to-transparent" />
+            <div className="space-y-8">
+              {milestones.map((m, i) => (
+                <div key={m.year} className="flex items-start gap-6">
+                  <div className="w-16 text-right flex-shrink-0">
+                    <span className="text-energy font-display font-black text-sm">{m.year}</span>
+                  </div>
+                  <div className="relative flex-shrink-0 mt-1">
+                    <div className="w-4 h-4 rounded-full bg-energy shadow-green-glow border-2 border-navy-900" />
+                  </div>
+                  <div className="pb-4">
+                    <p className="text-navy-900 font-medium text-sm leading-relaxed">{m.event}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-         </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-hero-gradient">
+        <div className="absolute inset-0 bg-dark-grid opacity-50" />
+        <div className="container-wide relative z-10 text-center">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white mb-6">
+            Ready to Partner with BEYR Energy?
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link href="/contact" className="btn-primary">
+              Request a Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/solutions" className="btn-secondary">
+              View Solutions
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );

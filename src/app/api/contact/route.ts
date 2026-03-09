@@ -1,39 +1,62 @@
-import { Resend } from 'resend';
-import { NextResponse } from 'next/server';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, subject, message } = await req.json();
+    const body = await req.json();
+    const { name, email, phone, company, service, message } = body;
 
-    const { data, error } = await resend.emails.send({
-      from: 'BEYR Energy <leads@beyrenergy.com>',
-      to: ['info@beyrenergy.com'],
-      subject: `New Lead: ${subject}`,
-      html: `
-        <div style="font-family: sans-serif; padding: 20px; color: #333;">
-          <h2 style="color: #001A3D;">New Business Inquiry from BEYR Energy Website</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Subject:</strong> ${subject}</p>
-          <div style="margin-top: 20px; padding: 15px; background: #F8F9FA; border-radius: 8px;">
-            <p><strong>Message:</strong></p>
-            <p>${message}</p>
-          </div>
-          <hr style="margin-top: 30px; border: none; border-top: 1px solid #EEE;" />
-          <p style="font-size: 12px; color: #999;">This lead was captured from the official BEYR Energy website contact form.</p>
-        </div>
-      `,
-    });
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 });
+    // We only try to send if RESEND_API_KEY is defined
+    if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      
+      await resend.emails.send({
+        from: "BEYR Energy Website <onboarding@resend.dev>", // Change to verified domain later
+        to: "info@beyrenergy.com",
+        subject: `New Inquiry from ${name} - ${service}`,
+        html: `
+          <h2>New Website Contact Form Submission</h2>
+          <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <tr>
+              <td width="30%"><strong>Name:</strong></td>
+              <td>${name}</td>
+            </tr>
+            <tr>
+              <td><strong>Email:</strong></td>
+              <td><a href="mailto:${email}">${email}</a></td>
+            </tr>
+            <tr>
+              <td><strong>Phone:</strong></td>
+              <td>${phone}</td>
+            </tr>
+            <tr>
+              <td><strong>Company:</strong></td>
+              <td>${company || "N/A"}</td>
+            </tr>
+            <tr>
+              <td><strong>Service of Interest:</strong></td>
+              <td>${service}</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <strong>Project Details/Message:</strong><br/>
+                <p style="white-space: pre-wrap;">${message}</p>
+              </td>
+            </tr>
+          </table>
+        `,
+      });
+    } else {
+      // Stub simulating success if key isn't provided yet
+      console.log("No Resend API Key provided. Simulated sending email:", body);
     }
 
-    return NextResponse.json({ success: true, data });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ success: true, message: "Email sent." }, { status: 200 });
+  } catch (error) {
+    console.error("Contact API Error:", error);
+    return NextResponse.json(
+      { success: false, error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }

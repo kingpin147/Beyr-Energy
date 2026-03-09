@@ -1,49 +1,16 @@
-@import "tailwindcss";
-@source "../**/*.{ts,tsx}";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  /* Core Colors - Inspired by premium GCC industrial themes */
-  --primary: #001A3D;         /* Deep Navy */
-  --primary-dark: #00122B;    /* Rich Darker Navy */
-  --primary-light: #002B66;   /* Accessible Lighter Navy */
-  --accent: #39FF14;          /* Electric Energy Green */
-  --accent-muted: #2ECC11;    /* Refined Green */
-  --accent-soft: rgba(57, 255, 20, 0.1);
-  
-  /* Neutral Palette */
-  --background: #FFFFFF;
-  --surface-light: #F8F9FA;
-  --surface-dark: #F0F2F5;
-  --foreground: #111827;      /* High contrast grey/black */
-  --foreground-muted: #4B5563;
-  --border: #E5E7EB;
-  
-  /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Inter', system-ui, -apple-system, sans-serif; /* Could use Syncopate if available */
-  
-  /* Effects */
-  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 32px;
-  --radius-xl: 64px;
-  --shadow-premium: 0 20px 40px -15px rgba(0, 26, 61, 0.1);
-}
-
-@theme inline {
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-primary-light: var(--primary-light);
-  --color-accent: var(--accent);
-  --color-accent-muted: var(--accent-muted);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface-light: var(--surface-light);
-  --color-border: var(--border);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-outfit: 'Outfit', system-ui, sans-serif;
+  --navy-950: #060d1a;
+  --navy-900: #0a1628;
+  --navy-800: #122048;
+  --energy-green: #00C851;
+  --energy-green-dark: #00a843;
 }
 
 * {
@@ -58,126 +25,143 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-inter);
+  background-color: #ffffff;
+  color: #0a1628;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fluid Typography */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+::-webkit-scrollbar-thumb {
+  background: #00C851;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00a843;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
-
-p {
-  font-size: clamp(1rem, 1.1vw, 1.125rem);
-  color: var(--foreground-muted);
-}
-
-/* Premium Layout Utilities */
-.section-padding {
-  padding: clamp(60px, 10vw, 120px) 0;
-}
-
-.container {
-  max-width: 1400px; /* Slightly wider for modern look */
-  margin: 0 auto;
-  padding: 0 min(2.5rem, 5vw);
-}
-
-.premium-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-}
-
-.glow-soft {
-  box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.glass-dark {
-  background: rgba(0, 26, 61, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Interactive Elements */
-a, button {
-  transition: var(--transition);
+/* Selection */
+::selection {
+  background: rgba(0, 200, 81, 0.25);
+  color: #0a1628;
 }
 
 @layer components {
+  /* Buttons */
   .btn-primary {
-    background: var(--accent);
-    color: var(--primary);
-    padding: 1rem 2.5rem;
-    border-radius: var(--radius-xl);
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.75rem;
-    transition: var(--transition);
-    border: 2px solid var(--accent);
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-energy text-navy-950 font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-green-600 hover:shadow-green-glow hover:scale-105 active:scale-95;
   }
-
-  .btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(57, 255, 20, 0.2);
-    background: transparent;
-    color: var(--accent);
-  }
-
+  
   .btn-secondary {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #FFFFFF;
-    padding: 1rem 2.5rem;
-    border-radius: var(--radius-xl);
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.75rem;
-    transition: var(--transition);
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-white hover:text-navy-950 hover:scale-105 active:scale-95;
   }
 
-  .btn-secondary:hover {
-    background: #FFFFFF;
-    color: var(--primary);
-    border-color: #FFFFFF;
-    transform: translateY(-4px);
+  .btn-outline-green {
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-energy text-energy font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-energy hover:text-navy-950 hover:scale-105 active:scale-95;
+  }
+
+  /* Section Headings */
+  .section-label {
+    @apply inline-flex items-center gap-2 text-energy font-semibold text-xs uppercase tracking-[0.2em] mb-4;
+  }
+
+  .section-title {
+    @apply font-display font-bold text-3xl md:text-4xl lg:text-5xl text-navy-900 leading-tight;
+  }
+
+  .section-title-white {
+    @apply font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight;
+  }
+
+  /* Cards */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-energy/30 hover:shadow-glass;
+  }
+
+  .solution-card {
+    @apply bg-white border border-gray-100 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,200,81,0.15)] hover:border-green-500/30;
+  }
+
+  /* Divider */
+  .green-divider {
+    @apply w-16 h-1 bg-energy rounded-full;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply relative text-sm font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-energy;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--energy-green);
+    transition: all 0.3s;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link-active {
+    @apply text-energy;
+  }
+  .nav-link-active::after {
+    width: 100%;
+  }
+
+  /* Input */
+  .form-input {
+    @apply w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl text-navy-900 placeholder:text-gray-400 outline-none transition-all duration-200 focus:border-energy focus:bg-white focus:ring-2 focus:ring-energy/20 text-sm;
+  }
+
+  /* Page hero */
+  .page-hero {
+    @apply relative bg-hero-gradient pt-32 pb-20 overflow-hidden;
+  }
+
+  /* Container */
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Tag badge */
+  .tag-badge {
+    @apply inline-block px-3 py-1 bg-energy/10 text-energy text-xs font-semibold rounded-full border border-energy/20;
   }
 }
 
-/* Responsive Grid Fixes */
-.grid-responsive {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
+@layer utilities {
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-energy to-green-400 bg-clip-text text-transparent;
+  }
+  
+  .bg-dark-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
 
-@media (max-width: 640px) {
-  .grid-responsive {
-    grid-template-columns: 1fr;
+  .glow-dot {
+    @apply absolute rounded-full opacity-20 blur-[100px] pointer-events-none;
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .writing-upright {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
   }
 }

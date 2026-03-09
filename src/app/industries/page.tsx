@@ -1,146 +1,141 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { HardHat, Droplets, Factory, Music, ZapOff, Building2, ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Industries We Serve | Energy Rental — BEYR Energy Dubai",
+  description:
+    "BEYR Energy provides industrial-grade alternative energy rental solutions for Construction, Oil & Gas, Manufacturing, Events, Utilities, and Infrastructure across the GCC.",
+};
 
 const industries = [
   {
-    name: "Construction",
-    description: "Reliable, fast-deployment power for massive construction projects. From site offices to heavy machinery, we ensure your timeline stays on track with zero power interruptions.",
-    icon: <HardHat className="w-12 h-12" />,
-    href: "/industries/construction",
-    stats: "40% Fuel Savings"
+    id: "construction",
+    title: "Construction",
+    desc: "Powering the UAE's most ambitious mega-projects with reliable, scalable temporary power.",
+    details: "Construction sites require flexible power that grows with the project phases. Our containerised BESS and solar hybrid solutions replace noisy, inefficient diesel generators, providing silent, emission-free power for tower cranes, site offices, and heavy machinery, while significantly reducing fuel costs.",
+    benefits: ["Silent operation for urban sites", "Scalable power as site grows", "Significant fuel savings vs diesel", "Zero emissions for green building ratings"],
+    bg: "from-amber-500/10 to-orange-500/10",
   },
   {
-    name: "Oil & Gas",
-    description: "Remote site power for the most extreme environments. Our BESS and hybrid systems provide steady, high-reliability power for drilling, pumping, and worker camps.",
-    icon: <Droplets className="w-12 h-12" />,
-    href: "/industries/oil-and-gas",
-    stats: "Zero Downtime"
+    id: "oil-gas",
+    title: "Oil & Gas",
+    desc: "Resilient off-grid power for the harshest environments in the GCC.",
+    details: "Remote drilling sites, pipelines, and processing facilities demand power that never fails. BEYR Energy provides ruggedized, desert-rated hybrid power systems that reduce diesel logistics and ensure continuous operation in temperatures up to 55°C.",
+    benefits: ["Desert-rated (55°C) equipment", "Reduced fuel logistics to remote sites", "24/7 satellite monitoring", "Zone-compliant options available"],
+    bg: "from-red-500/10 to-orange-600/10",
   },
   {
-    name: "Manufacturing",
-    description: "Optimize your factory energy costs with peak shaving. Our storage solutions reduce demand charges and provide critical backup for continuous production lines.",
-    icon: <Factory className="w-12 h-12" />,
-    href: "/industries/manufacturing",
-    stats: "ROI Focus"
+    id: "manufacturing",
+    title: "Manufacturing",
+    desc: "Protecting production lines and reducing energy costs for industrial plants.",
+    details: "Power interruptions can cost manufacturing facilities millions in ruined materials and downtime. Our industrial BESS units provide seamless UPS-grade backup while also performing peak shaving to reduce utility demand charges during high-tariff periods.",
+    benefits: ["UPS-grade seamless backup", "Peak demand charge reduction", "Power quality improvement", "No capital expenditure required"],
+    bg: "from-blue-500/10 to-indigo-500/10",
   },
   {
-    name: "Events & Media",
-    description: "Silent, clean power for world-class events. Replace noisy generators with silent BESS and hybrid systems for concerts, festivals, and major corporate gatherings.",
-    icon: <Music className="w-12 h-12" />,
-    href: "/industries/events",
-    stats: "Silent Power"
+    id: "events",
+    title: "Events & Exhibitions",
+    desc: "Silent, emission-free power for the GCC's premier events and festivals.",
+    details: "Major concerts, sporting events, and outdoor exhibitions in Dubai and across the region require massive temporary power without the noise and fumes of traditional generators. Our BESS units deliver completely silent, clean power to stages, broadcasting equipment, and VIP areas.",
+    benefits: ["Completely silent operation", "Zero emissions and fumes", "Rapid 24h deployment", "Reliable broadcasting power"],
+    bg: "from-purple-500/10 to-pink-500/10",
   },
   {
-    name: "Utilities & Grid",
-    description: "Support the grid during peak loads or maintenance. Rapidly deploy megawatt-scale battery systems for frequency regulation and voltage support.",
-    icon: <ZapOff className="w-12 h-12" />,
-    href: "/industries/utilities",
-    stats: "Grid Strength"
+    id: "utilities",
+    title: "Utilities",
+    desc: "Grid stabilisation and frequency regulation for national power grids.",
+    details: "We partner with utility providers across the GCC to deploy multi-MW battery storage systems that stabilize the grid, manage peak loads, and integrate renewable energy sources. Our containerised units can be deployed rapidly to address localized grid constraints.",
+    benefits: ["Rapid stabilization deployment", "Frequency regulation support", "Renewables integration", "Substation peak shaving"],
+    bg: "from-teal-500/10 to-cyan-500/10",
   },
   {
-    name: "Infrastructure",
-    description: "Powering the backbone of the GCC. From rail projects to port expansions, we provide the scalable energy infrastructure needed for major state projects.",
-    icon: <Building2 className="w-12 h-12" />,
-    href: "/industries/infrastructure",
-    stats: "Scalability"
-  }
+    id: "infrastructure",
+    title: "Infrastructure",
+    desc: "Critical backup power for hospitals, airports, and data centres.",
+    details: "Urban infrastructure cannot afford to lose power. We provide high-capacity, ultra-reliable emergency backup systems that deploy faster than permanent installations, offering a bridge solution during upgrades or an immediate response to critical failures.",
+    benefits: ["High-capacity emergency backup", "Bridge power during facility upgrades", "N+1 redundancy configurations", "Rapid deployment for disaster recovery"],
+    bg: "from-green-500/10 to-emerald-500/10",
+  },
 ];
 
 export default function IndustriesPage() {
   return (
-    <div className="flex flex-col">
-      {/* Subpage Hero */}
-      <section className="relative pt-40 pb-20 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
-        </div>
-        <div className="container relative z-10 text-center text-white">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-extrabold mb-6"
-          >
-            Industries <span className="text-accent">We Serve</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-white/70 max-w-3xl mx-auto"
-          >
-            Tailored energy rental systems engineered for the specific demands of every major sector in the GCC.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Industries Grid */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, idx) => (
-              <motion.div 
-                key={industry.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group p-10 rounded-[3rem] bg-background border border-border hover:bg-white hover:border-accent hover:shadow-2xl transition-all flex flex-col items-center text-center"
-              >
-                <div className="w-20 h-20 rounded-2xl premium-gradient text-white flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform">
-                  {industry.icon}
-                </div>
-                <div className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-widest mb-4">
-                  {industry.stats}
-                </div>
-                <h3 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">
-                  {industry.name}
-                </h3>
-                <p className="text-foreground/70 mb-8 leading-relaxed">
-                  {industry.description}
-                </p>
-                <Link 
-                  href={industry.href} 
-                  className="flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all mt-auto"
-                >
-                  View Sector Insights <ArrowRight size={18} />
-                </Link>
-              </motion.div>
+    <div className="bg-white">
+      {/* Hero */}
+      <section className="page-hero">
+        <div className="absolute inset-0 bg-dark-grid" />
+        <div className="glow-dot w-96 h-96 bg-blue-500 top-0 right-0 opacity-10" />
+        <div className="container-wide relative z-10">
+          <div className="section-label">
+            <span className="w-8 h-px bg-energy" />
+            Industries We Serve
+          </div>
+          <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight max-w-3xl mb-6">
+            Powering the GCC's{" "}
+            <span className="text-gradient-green">Critical Sectors</span>
+          </h1>
+          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-8">
+            From remote oil fields to urban mega-projects, BEYR Energy delivers tailored, scalable rental power solutions designed for the unique demands of your industry.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {industries.map(ind => (
+              <a key={ind.id} href={`#${ind.id}`} className="px-4 py-2 rounded-full bg-white/10 hover:bg-energy/20 border border-white/20 text-white text-sm font-medium transition-colors">
+                {ind.title}
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industries CTA */}
-      <section className="py-24 bg-primary text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-          <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-            <rect x="0" y="0" width="100" height="100" fill="currentColor" />
-          </svg>
-        </div>
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 italic">"We provide more than power; we provide the foundation for industrial growth."</h2>
-            <p className="text-xl text-white/70 mb-12">
-              Our engineering team has depth of experience across the construction, energy, and utility sectors.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link 
-                href="/contact" 
-                className="bg-accent text-primary px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-accent/20"
-              >
-                Start Sector Assessment
-              </Link>
-              <Link 
-                href="/solutions" 
-                className="bg-white/10 border border-white/20 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-xl"
-              >
-                Explore Technology
-              </Link>
+      {/* Industries Detail */}
+      <section className="py-20 lg:py-28">
+        <div className="container-wide space-y-24">
+          {industries.map((ind, i) => (
+            <div key={ind.id} id={ind.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''} scroll-mt-32`}>
+              <div className={i % 2 !== 0 ? 'lg:order-2' : ''}>
+                <div className="section-label mb-4">{ind.title}</div>
+                <h2 className="section-title mb-6 leading-tight">{ind.desc}</h2>
+                <p className="text-gray-500 text-lg leading-relaxed mb-8">{ind.details}</p>
+                
+                <h3 className="font-display font-bold text-navy-900 mb-4">Key Benefits</h3>
+                <ul className="space-y-3 mb-8">
+                  {ind.benefits.map(benefit => (
+                    <li key={benefit} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-energy flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-600 font-medium">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact" className="btn-outline-green">
+                  Request a Solution for {ind.title}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              
+              <div className={`relative rounded-[2rem] h-[400px] lg:h-[500px] bg-gradient-to-br ${ind.bg} border border-gray-100 shadow-xl overflow-hidden ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                <div className="absolute inset-0 bg-dark-grid opacity-20" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="font-display font-black text-4xl text-navy-900/50 mb-2">BEYR ENERGY</div>
+                    <div className="text-navy-900/40 font-bold uppercase tracking-widest">{ind.title} Division</div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-hero-gradient">
+        <div className="container-wide text-center relative z-10">
+          <h2 className="font-display font-black text-3xl md:text-5xl text-white mb-6">Don't See Your Industry?</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg">Our modular energy systems can be adapted to almost any application that requires reliable, off-grid or backup power.</p>
+          <Link href="/contact" className="btn-primary px-8 py-4">
+            Consult Our Engineering Team
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </div>
