@@ -19,7 +19,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-hero-gradient mb-16 md:mb-20 lg:mb-24">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-hero-gradient mb-12 md:mb-16 lg:mb-20">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-dark-grid opacity-100" />
 
@@ -96,16 +96,16 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div
-            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 mb-24 sm:mb-32 transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-24 sm:mb-32 transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
-            <Link href="/contact" className="btn-primary text-sm py-3 px-6 sm:py-4 sm:px-8 shadow-green-glow justify-center sm:justify-start">
+            <Link href="/contact" className="btn-primary shadow-green-glow w-full sm:w-auto justify-center">
               Request a Quote
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
             <a
               href="tel:+971000000000"
-              className="btn-secondary text-sm py-3 px-6 sm:py-4 sm:px-8 flex items-center justify-center sm:justify-start gap-2"
+              className="btn-secondary w-full sm:w-auto justify-center"
             >
               <Phone className="w-4 h-4" />
               Call Now

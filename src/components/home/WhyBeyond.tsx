@@ -62,7 +62,7 @@ export default function WhyBeyond() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 lg:py-48 bg-hero-gradient relative overflow-hidden px-4 sm:px-0">
+    <section ref={ref} className="py-16 md:py-24 lg:py-32 bg-hero-gradient relative overflow-hidden px-4 sm:px-0">
       {/* Background */}
       <div className="absolute inset-0 bg-dark-grid" />
       <div className="glow-dot w-[500px] h-[500px] bg-energy top-[-100px] right-[-150px] opacity-10" />

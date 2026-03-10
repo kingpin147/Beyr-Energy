@@ -27,7 +27,7 @@ export default function IndustriesSection() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 lg:py-48 bg-white px-4 sm:px-0">
+    <section ref={ref} className="py-16 md:py-24 lg:py-32 bg-white px-4 sm:px-0">
       <div className="container-wide">
         {/* Header */}
         <div className={`flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>

@@ -36,7 +36,7 @@ export default function WhoWeAre() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 lg:py-48 bg-white overflow-hidden px-4 sm:px-0">
+    <section ref={ref} className="py-16 md:py-24 lg:py-32 bg-white overflow-hidden px-4 sm:px-0">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Content */}

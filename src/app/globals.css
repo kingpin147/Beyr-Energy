@@ -168,15 +168,21 @@ body {
 
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-8 py-4 bg-energy text-navy-950 font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-green-600 hover:shadow-green-glow hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 h-11 bg-energy text-navy-950 font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-green-600 hover:shadow-green-glow hover:scale-105 active:scale-95 whitespace-nowrap shrink-0;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-white hover:text-navy-950 hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 h-11 border-2 border-white text-white font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-white hover:text-navy-950 hover:scale-105 active:scale-95 whitespace-nowrap shrink-0;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 
   .btn-outline-green {
-    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-energy text-energy font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-energy hover:text-navy-950 hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 h-11 border-2 border-energy text-energy font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-energy hover:text-navy-950 hover:scale-105 active:scale-95 whitespace-nowrap shrink-0;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 
   /* Section Headings */

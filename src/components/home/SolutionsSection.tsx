@@ -63,7 +63,7 @@ export default function SolutionsSection() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 lg:py-48 bg-gray-50 overflow-hidden px-4 sm:px-0">
+    <section ref={ref} className="py-16 md:py-24 lg:py-32 bg-gray-50 overflow-hidden px-4 sm:px-0">
       <div className="container-wide">
         {/* Header */}
         <div className={`text-center mb-24 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>

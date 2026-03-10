@@ -117,8 +117,8 @@ export default function Navbar() {
             >
               +971 00 000 0000
             </a>
-            <Link href="/contact" className="btn-primary text-xs py-3 px-6">
-              Get a Quote
+            <Link href="/contact" className="btn-primary">
+              GET A QUOTE
             </Link>
           </div>
 

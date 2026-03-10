@@ -18,7 +18,7 @@ export default function CTABanner() {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 bg-gray-50 relative overflow-hidden px-4 sm:px-0">
+    <section ref={ref} className="py-16 md:py-20 bg-gray-50 relative overflow-hidden px-4 sm:px-0">
       {/* Decorative */}
       <div className="absolute inset-0 bg-dark-grid opacity-30" />
 
@@ -55,14 +55,14 @@ export default function CTABanner() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link
                 href="/contact"
-                className="btn-primary text-sm py-4 px-10 shadow-green-glow w-full sm:w-auto justify-center"
+                className="btn-primary text-sm py-3.5 px-8 shadow-green-glow w-full sm:w-auto justify-center"
               >
                 Request a Quote
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+971000000000"
-                className="btn-secondary text-sm py-4 px-10 w-full sm:w-auto justify-center"
+                className="btn-secondary text-sm py-3.5 px-8 w-full sm:w-auto justify-center"
               >
                 <Phone className="w-4 h-4" />
                 Call Us Now
@@ -71,7 +71,7 @@ export default function CTABanner() {
                 href="https://wa.me/971000000000?text=Hi%2C%20I%27m%20interested%20in%20a%20quote."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-10 py-4 rounded-lg border-2 border-[#25D366] text-[#25D366] font-bold text-sm uppercase tracking-widest hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border-2 border-[#25D366] text-[#25D366] font-bold text-sm uppercase tracking-widest hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp
