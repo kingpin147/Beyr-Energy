@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --font-inter: 'Inter', system-ui, sans-serif;
-  --font-outfit: 'Outfit', system-ui, sans-serif;
-  --navy-950: #060d1a;
-  --navy-900: #0a1628;
-  --navy-800: #122048;
-  --energy-green: #00C851;
-  --energy-green-dark: #00a843;
+@import "tailwindcss";
+
+@theme {
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+
+  --color-energy: #00C851;
+  --color-energy-dark: #00a843;
+  --color-navy-950: #060d1a;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #122048;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+
+  --shadow-green-glow: 0 0 15px rgba(0, 200, 81, 0.5);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  --background-image-hero-gradient: radial-gradient(circle at 50% 0%, var(--color-navy-800) 0%, var(--color-navy-950) 60%);
 }
 
 * {
@@ -37,13 +46,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0a1628;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #00C851;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #00a843;
 }
@@ -55,26 +67,27 @@ body {
 }
 
 @layer components {
+
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-8 py-4 bg-energy text-navy-950 font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-green-600 hover:shadow-green-glow hover:scale-105 active:scale-95;
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-energy)] text-[var(--color-navy-950)] font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-green-600 hover:shadow-[blur(15px)_rgba(0, 200, 81, 0.5)] hover:scale-105 active:scale-95;
   }
-  
+
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-white hover:text-navy-950 hover:scale-105 active:scale-95;
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-white hover:text-[var(--color-navy-950)] hover:scale-105 active:scale-95;
   }
 
   .btn-outline-green {
-    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-energy text-energy font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-energy hover:text-navy-950 hover:scale-105 active:scale-95;
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-[var(--color-energy)] text-[var(--color-energy)] font-bold text-sm uppercase tracking-widest rounded-lg transition-all duration-300 hover:bg-[var(--color-energy)] hover:text-[var(--color-navy-950)] hover:scale-105 active:scale-95;
   }
 
   /* Section Headings */
   .section-label {
-    @apply inline-flex items-center gap-2 text-energy font-semibold text-xs uppercase tracking-[0.2em] mb-4;
+    @apply inline-flex items-center gap-2 text-[var(--color-energy)] font-semibold text-xs uppercase tracking-[0.2em] mb-4;
   }
 
   .section-title {
-    @apply font-display font-bold text-3xl md:text-4xl lg:text-5xl text-navy-900 leading-tight;
+    @apply font-display font-bold text-3xl md:text-4xl lg:text-5xl text-[var(--color-navy-900)] leading-tight;
   }
 
   .section-title-white {
@@ -83,22 +96,23 @@ body {
 
   /* Cards */
   .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-energy/30 hover:shadow-glass;
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-[var(--color-energy)]/30 hover:shadow-[0_8px_32px_0_rgba(0, 0, 0, 0.37)];
   }
 
   .solution-card {
-    @apply bg-white border border-gray-100 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,200,81,0.15)] hover:border-green-500/30;
+    @apply bg-white border border-gray-100 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0, 200, 81, 0.15)] hover:border-green-500/30;
   }
 
   /* Divider */
   .green-divider {
-    @apply w-16 h-1 bg-energy rounded-full;
+    @apply w-16 h-1 bg-[var(--color-energy)] rounded-full;
   }
 
   /* Nav link */
   .nav-link {
-    @apply relative text-sm font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-energy;
+    @apply relative text-sm font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-[var(--color-energy)];
   }
+
   .nav-link::after {
     content: '';
     position: absolute;
@@ -106,28 +120,30 @@ body {
     left: 0;
     height: 2px;
     width: 0;
-    background-color: var(--energy-green);
+    background-color: var(--color-energy);
     transition: all 0.3s;
   }
+
   .nav-link:hover::after {
     width: 100%;
   }
 
   .nav-link-active {
-    @apply text-energy;
+    @apply text-[var(--color-energy)];
   }
+
   .nav-link-active::after {
     width: 100%;
   }
 
   /* Input */
   .form-input {
-    @apply w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl text-navy-900 placeholder:text-gray-400 outline-none transition-all duration-200 focus:border-energy focus:bg-white focus:ring-2 focus:ring-energy/20 text-sm;
+    @apply w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl text-[var(--color-navy-900)] placeholder:text-gray-400 outline-none transition-all duration-200 focus:border-[var(--color-energy)] focus:bg-white focus:ring-2 focus:ring-[var(--color-energy)]/20 text-sm;
   }
 
   /* Page hero */
   .page-hero {
-    @apply relative bg-hero-gradient pt-32 pb-20 overflow-hidden;
+    @apply relative bg-[image:var(--background-image-hero-gradient)] pt-32 pb-20 overflow-hidden;
   }
 
   /* Container */
@@ -137,18 +153,18 @@ body {
 
   /* Tag badge */
   .tag-badge {
-    @apply inline-block px-3 py-1 bg-energy/10 text-energy text-xs font-semibold rounded-full border border-energy/20;
+    @apply inline-block px-3 py-1 bg-[var(--color-energy)]/10 text-[var(--color-energy)] text-xs font-semibold rounded-full border border-[var(--color-energy)]/20;
   }
 }
 
 @layer utilities {
   .text-gradient-green {
-    @apply bg-gradient-to-r from-energy to-green-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[var(--color-energy)] to-green-400 bg-clip-text text-transparent;
   }
-  
+
   .bg-dark-grid {
-    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), 
-                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
