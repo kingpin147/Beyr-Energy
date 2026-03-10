@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import FloatingCallButton from "@/components/FloatingCallButton";
 import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
@@ -85,6 +86,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <FloatingCallButton />
       </body>
     </html>
   );

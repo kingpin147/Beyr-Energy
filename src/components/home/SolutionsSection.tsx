@@ -63,33 +63,32 @@ export default function SolutionsSection() {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-gray-50">
+    <section ref={ref} className="py-28 lg:py-48 bg-gray-50 overflow-hidden px-4 sm:px-0">
       <div className="container-wide">
         {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`text-center mb-24 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="section-label justify-center">
             <span className="w-8 h-px bg-energy" />
             Our Core Solutions
             <span className="w-8 h-px bg-energy" />
           </div>
-          <h2 className="section-title max-w-2xl mx-auto mb-4">
+          <h2 className="section-title max-w-2xl mx-auto mb-6">
             Complete Energy Rental{" "}
             <span className="text-gradient-green">Ecosystem</span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-500 max-w-xl mx-auto leading-relaxed text-sm sm:text-base px-2">
             From BESS to solar hybrid, every solution is modular, scalable, and ready to deploy within 48 hours.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {solutions.map((sol, i) => (
             <Link
               key={sol.title}
               href={sol.href}
-              className={`solution-card group cursor-pointer relative overflow-hidden transition-all duration-700 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
+              className={`solution-card group cursor-pointer relative overflow-hidden transition-all duration-700 p-6 sm:p-8 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
               style={{ transitionDelay: `${100 + i * 80}ms` }}
             >
               {/* Top accent */}
@@ -98,23 +97,23 @@ export default function SolutionsSection() {
               {/* Tag */}
               {sol.tag && (
                 <div className="absolute top-5 right-5">
-                  <span className="tag-badge">{sol.tag}</span>
+                  <span className="tag-badge text-[10px]">{sol.tag}</span>
                 </div>
               )}
 
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-energy/10 border border-energy/20 flex items-center justify-center mb-6 group-hover:bg-energy/20 group-hover:scale-110 transition-all duration-300">
-                <sol.icon className="w-7 h-7 text-energy" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-energy/10 border border-energy/20 flex items-center justify-center mb-6 group-hover:bg-energy/20 group-hover:scale-110 transition-all duration-300">
+                <sol.icon className="w-6 h-6 sm:w-7 sm:h-7 text-energy" />
               </div>
 
               {/* Content */}
-              <h3 className="font-display font-bold text-navy-900 text-lg mb-3 group-hover:text-energy transition-colors duration-200">
+              <h3 className="font-display font-bold text-navy-900 text-lg sm:text-xl mb-3 group-hover:text-energy transition-colors duration-200">
                 {sol.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">{sol.desc}</p>
+              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6">{sol.desc}</p>
 
               {/* CTA */}
-              <div className="flex items-center gap-2 text-energy text-sm font-semibold">
+              <div className="flex items-center gap-2 text-energy text-xs sm:text-sm font-semibold mt-auto">
                 Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </div>

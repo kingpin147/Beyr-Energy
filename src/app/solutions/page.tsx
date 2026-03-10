@@ -82,7 +82,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20 lg:py-28">
+      <section className="py-28 lg:py-40">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {solutions.map((sol) => (

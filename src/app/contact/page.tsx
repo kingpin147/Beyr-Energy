@@ -57,7 +57,7 @@ export default function ContactPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <section className="bg-hero-gradient pt-32 pb-20 relative overflow-hidden">
+      <section className="page-hero text-center">
         <div className="absolute inset-0 bg-dark-grid" />
         <div className="container-wide relative z-10 text-center">
           <div className="section-label justify-center">
@@ -75,10 +75,10 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 -mt-10 relative z-20">
+      <section className="py-28 relative z-20">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+
             {/* Contact Info Cards */}
             <div className="lg:col-span-1 space-y-6">
               {/* Office Box */}
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="font-display font-bold text-navy-900 text-xl mb-2">Dubai Headquarters</h3>
-                <p className="text-gray-500 leading-relaxed mb-6">Beyond Rental of Alternative Energy Equipment LLC<br/>Dubai, United Arab Emirates</p>
+                <p className="text-gray-500 leading-relaxed mb-6">Beyond Rental of Alternative Energy Equipment LLC<br />Dubai, United Arab Emirates</p>
                 <div className="space-y-4">
                   <a href="tel:+971000000000" className="flex items-center gap-3 text-gray-600 hover:text-energy transition-colors group/link">
                     <Phone className="w-4 h-4 text-energy group-hover/link:scale-110 transition-transform" />
@@ -240,7 +240,7 @@ export default function ContactPage() {
                 </button>
               </form>
             </div>
-            
+
           </div>
         </div>
       </section>

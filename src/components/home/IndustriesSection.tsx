@@ -27,11 +27,11 @@ export default function IndustriesSection() {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-white">
+    <section ref={ref} className="py-28 lg:py-48 bg-white px-4 sm:px-0">
       <div className="container-wide">
         {/* Header */}
         <div className={`flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <div>
+          <div className="max-w-xl">
             <div className="section-label">
               <span className="w-8 h-px bg-energy" />
               Industries We Serve
@@ -41,20 +41,19 @@ export default function IndustriesSection() {
               <span className="text-gradient-green">Critical Sector</span>
             </h2>
           </div>
-          <p className="text-gray-500 max-w-xs leading-relaxed lg:text-right text-sm">
+          <p className="text-gray-500 max-w-sm leading-relaxed lg:text-right text-xs sm:text-base">
             Our energy rental solutions are trusted across 6 major industries throughout the UAE & GCC region.
           </p>
         </div>
 
         {/* Industry Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {industries.map((ind, i) => (
             <Link
               key={ind.name}
               href={ind.href}
-              className={`group relative p-7 rounded-2xl border border-gray-100 bg-white overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
+              className={`group relative p-6 sm:p-8 rounded-2xl border border-gray-100 bg-white overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
               style={{ transitionDelay: `${100 + i * 80}ms`, transitionDuration: "600ms" }}
             >
               {/* Background gradient on hover */}
@@ -65,10 +64,10 @@ export default function IndustriesSection() {
                 <ind.icon className="w-6 h-6 text-navy-800 group-hover:text-energy transition-colors duration-200" />
               </div>
 
-              <h3 className="relative z-10 font-display font-bold text-navy-900 text-base mb-2.5 group-hover:text-energy transition-colors duration-200">
+              <h3 className="relative z-10 font-display font-bold text-navy-900 text-base sm:text-lg mb-2.5 group-hover:text-energy transition-colors duration-200">
                 {ind.name}
               </h3>
-              <p className="relative z-10 text-gray-500 text-sm leading-relaxed mb-5">
+              <p className="relative z-10 text-gray-500 text-xs sm:text-sm leading-relaxed mb-5">
                 {ind.desc}
               </p>
               <div className="relative z-10 flex items-center gap-1.5 text-xs font-semibold text-energy opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200">
@@ -80,8 +79,8 @@ export default function IndustriesSection() {
         </div>
 
         {/* View All button */}
-        <div className={`text-center mt-10 transition-all duration-700 delay-700 ${visible ? "opacity-100" : "opacity-0"}`}>
-          <Link href="/industries" className="btn-outline-green">
+        <div className={`text-center mt-12 transition-all duration-700 delay-700 ${visible ? "opacity-100" : "opacity-0"}`}>
+          <Link href="/industries" className="btn-outline-green w-full sm:w-auto justify-center">
             View All Industries
             <ArrowRight className="w-4 h-4" />
           </Link>

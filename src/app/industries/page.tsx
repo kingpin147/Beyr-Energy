@@ -89,15 +89,15 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Detail */}
-      <section className="py-20 lg:py-28">
-        <div className="container-wide space-y-24">
+      <section className="py-28 lg:py-40">
+        <div className="container-wide space-y-32">
           {industries.map((ind, i) => (
             <div key={ind.id} id={ind.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''} scroll-mt-32`}>
               <div className={i % 2 !== 0 ? 'lg:order-2' : ''}>
                 <div className="section-label mb-4">{ind.title}</div>
                 <h2 className="section-title mb-6 leading-tight">{ind.desc}</h2>
                 <p className="text-gray-500 text-lg leading-relaxed mb-8">{ind.details}</p>
-                
+
                 <h3 className="font-display font-bold text-navy-900 mb-4">Key Benefits</h3>
                 <ul className="space-y-3 mb-8">
                   {ind.benefits.map(benefit => (
@@ -112,7 +112,7 @@ export default function IndustriesPage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              
+
               <div className={`relative rounded-[2rem] h-[400px] lg:h-[500px] bg-gradient-to-br ${ind.bg} border border-gray-100 shadow-xl overflow-hidden ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
                 <div className="absolute inset-0 bg-dark-grid opacity-20" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -128,7 +128,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-hero-gradient">
+      <section className="py-28 bg-hero-gradient relative overflow-hidden">
         <div className="container-wide text-center relative z-10">
           <h2 className="font-display font-black text-3xl md:text-5xl text-white mb-6">Don't See Your Industry?</h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg">Our modular energy systems can be adapted to almost any application that requires reliable, off-grid or backup power.</p>

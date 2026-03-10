@@ -11,7 +11,7 @@ export default function SolarHybridPage() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-hero-gradient pt-32 pb-20 relative overflow-hidden">
+      <section className="page-hero">
         <div className="absolute inset-0 bg-dark-grid opacity-50" />
         <div className="glow-dot w-96 h-96 bg-energy top-0 right-0 opacity-10" />
         <div className="container-wide relative z-10">
@@ -44,12 +44,12 @@ export default function SolarHybridPage() {
             <div>
               <h2 className="font-display font-bold text-3xl text-navy-900 mb-6">Redefining Remote Power</h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                For remote construction camps, mining operations, and oil exploration sites, diesel logistics represent a massive operational expense and supply chain risk. 
+                For remote construction camps, mining operations, and oil exploration sites, diesel logistics represent a massive operational expense and supply chain risk.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
                 BEYR Energy's Solar Hybrid solutions integrate pre-wired, modular solar PV arrays with high-density BESS and a backup diesel generator, all managed by an intelligent microgrid controller. The system maximizes solar yield during the day, charges the batteries, and only runs the generator when absolutely necessary.
               </p>
-              
+
               <h3 className="font-display font-bold text-xl text-navy-900 mb-4">Core Applications:</h3>
               <ul className="space-y-4 mb-8">
                 {[
@@ -66,7 +66,7 @@ export default function SolarHybridPage() {
                 ))}
               </ul>
             </div>
-            
+
             <div className="space-y-8">
               <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-xl text-navy-900 mb-6">System Specifications</h3>

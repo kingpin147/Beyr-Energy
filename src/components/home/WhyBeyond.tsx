@@ -62,7 +62,7 @@ export default function WhyBeyond() {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-hero-gradient relative overflow-hidden">
+    <section ref={ref} className="py-28 lg:py-48 bg-hero-gradient relative overflow-hidden px-4 sm:px-0">
       {/* Background */}
       <div className="absolute inset-0 bg-dark-grid" />
       <div className="glow-dot w-[500px] h-[500px] bg-energy top-[-100px] right-[-150px] opacity-10" />
@@ -80,19 +80,18 @@ export default function WhyBeyond() {
             Built for{" "}
             <span className="text-gradient-green">Industrial Reliability</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed text-sm sm:text-base px-2">
             When energy reliability is mission-critical, clients across the GCC choose BEYR Energy. Here's why.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {usps.map((usp, i) => (
             <div
               key={usp.title}
-              className={`glass-card group relative transition-all duration-700 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
+              className={`glass-card group relative transition-all duration-700 p-6 sm:p-8 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
               style={{ transitionDelay: `${100 + i * 80}ms` }}
             >
               {/* Icon + Stat */}
@@ -101,15 +100,15 @@ export default function WhyBeyond() {
                   <usp.icon className="w-6 h-6 text-energy" />
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-display font-black text-energy">{usp.stat}</div>
-                  <div className="text-gray-500 text-xs font-medium">{usp.statLabel}</div>
+                  <div className="text-xl sm:text-2xl font-display font-black text-energy">{usp.stat}</div>
+                  <div className="text-gray-500 text-[10px] sm:text-xs font-medium">{usp.statLabel}</div>
                 </div>
               </div>
 
-              <h3 className="font-display font-bold text-white text-base mb-2 group-hover:text-energy transition-colors duration-200">
+              <h3 className="font-display font-bold text-white text-base sm:text-lg mb-2 group-hover:text-energy transition-colors duration-200">
                 {usp.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{usp.desc}</p>
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{usp.desc}</p>
             </div>
           ))}
         </div>

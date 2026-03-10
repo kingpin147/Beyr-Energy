@@ -58,25 +58,25 @@ export default function ProjectsPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 lg:py-28">
+      <section className="py-28 lg:py-40">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {projects.map((proj, i) => (
-              <div key={i} className="group border border-gray-100 rounded-3xl p-8 hover:border-green-500/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-white relative overflow-hidden">
+              <div key={i} className="group border border-gray-100 rounded-3xl p-10 hover:border-green-500/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-energy transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                
+
                 <div className="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">
                   <MapPin className="w-3.5 h-3.5 text-energy" /> {proj.location}
                 </div>
-                
+
                 <h2 className="font-display font-bold text-navy-900 text-xl mb-4 group-hover:text-energy transition-colors">
                   {proj.title}
                 </h2>
-                
+
                 <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
                   {proj.desc}
                 </p>
-                
+
                 <div className="bg-gray-50 rounded-2xl p-4 mb-6 space-y-3">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Client:</span>
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
                     <span className="font-bold text-energy">{proj.savings}</span>
                   </div>
                 </div>
-                
+
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-gray-100 rounded-xl text-navy-900 font-bold text-sm hover:border-energy hover:text-energy transition-colors">
                   Inquire About Similar Solution
                   <ArrowRight className="w-4 h-4" />
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-3 px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl">
               <Zap className="w-5 h-5 text-energy" />

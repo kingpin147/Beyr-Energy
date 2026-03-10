@@ -46,7 +46,7 @@ export default function AboutPage() {
       </section>
 
       {/* Main Story */}
-      <section className="py-20 lg:py-28">
+      <section className="py-28 lg:py-40">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -93,9 +93,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-28 lg:py-40 bg-gray-50">
         <div className="container-wide">
-          <div className="text-center mb-14">
+          <div className="text-center mb-20">
             <div className="section-label justify-center">
               <span className="w-8 h-px bg-energy" />
               Our Values
@@ -103,13 +103,13 @@ export default function AboutPage() {
             </div>
             <h2 className="section-title">What Drives Us</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((v) => (
-              <div key={v.title} className="solution-card text-center group">
-                <div className="w-14 h-14 rounded-2xl bg-energy/10 border border-energy/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-energy/20 transition-colors">
-                  <v.icon className="w-7 h-7 text-energy" />
+              <div key={v.title} className="solution-card text-center group p-10">
+                <div className="w-16 h-16 rounded-2xl bg-energy/10 border border-energy/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-energy/20 transition-colors">
+                  <v.icon className="w-8 h-8 text-energy" />
                 </div>
-                <h3 className="font-display font-bold text-navy-900 text-base mb-3">{v.title}</h3>
+                <h3 className="font-display font-bold text-navy-900 text-lg mb-4">{v.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
@@ -118,9 +118,9 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 lg:py-28">
+      <section className="py-28 lg:py-40">
         <div className="container-wide">
-          <div className="text-center mb-14">
+          <div className="text-center mb-20">
             <div className="section-label justify-center">
               <span className="w-8 h-px bg-energy" />
               Our Journey
@@ -130,8 +130,8 @@ export default function AboutPage() {
           </div>
           <div className="max-w-2xl mx-auto relative">
             <div className="absolute left-[72px] top-0 bottom-0 w-px bg-gradient-to-b from-energy via-energy/50 to-transparent" />
-            <div className="space-y-8">
-              {milestones.map((m, i) => (
+            <div className="space-y-10">
+              {milestones.map((m) => (
                 <div key={m.year} className="flex items-start gap-6">
                   <div className="w-16 text-right flex-shrink-0">
                     <span className="text-energy font-display font-black text-sm">{m.year}</span>
@@ -150,10 +150,10 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-hero-gradient">
+      <section className="py-24 bg-hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-dark-grid opacity-50" />
         <div className="container-wide relative z-10 text-center">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-white mb-6">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white mb-8">
             Ready to Partner with BEYR Energy?
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-4">

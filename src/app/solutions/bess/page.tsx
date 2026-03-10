@@ -11,35 +11,35 @@ export default function BessPage() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-hero-gradient pt-32 pb-20 relative overflow-hidden">
+      <section className="page-hero">
         <div className="absolute inset-0 bg-dark-grid opacity-50" />
         <div className="glow-dot w-96 h-96 bg-energy top-0 right-0 opacity-10" />
         <div className="container-wide relative z-10">
-          <Link href="/solutions" className="inline-flex items-center gap-2 text-energy hover:text-white transition-colors text-sm font-medium mb-6">
+          <Link href="/solutions" className="inline-flex items-center gap-2 text-energy hover:text-white transition-colors text-sm font-medium mb-8">
             <ArrowRight className="w-4 h-4 rotate-180" /> Back to Solutions
           </Link>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-lg bg-energy/20 flex items-center justify-center">
               <Zap className="w-5 h-5 text-energy" />
             </div>
             <div className="section-label !mb-0">Most Popular</div>
           </div>
-          <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight max-w-3xl mb-6">
+          <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight max-w-3xl mb-8">
             Battery Energy
             <br />
             <span className="text-gradient-green">Storage Systems (BESS)</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-8">
+          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-10">
             Modular, high-capacity lithium-ion storage units built for the harshest GCC environments. Deployable within 48 hours for immediate power stability and fuel reduction.
           </p>
           <div className="flex gap-4">
-            <Link href="/contact" className="btn-primary py-3 px-6 shadow-green-glow text-sm">Request Quote</Link>
+            <Link href="/contact" className="btn-primary py-4 px-8 shadow-green-glow">Request Quote</Link>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20 lg:py-28">
+      <section className="py-28 lg:py-40">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -50,7 +50,7 @@ export default function BessPage() {
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
                 Available in configurations from 50 kWh up to multi-megawatt utility scale, our rental fleet is fully modular. Scale your capacity instantly without costly infrastructure changes.
               </p>
-              
+
               <h3 className="font-display font-bold text-xl text-navy-900 mb-4">Core Applications:</h3>
               <ul className="space-y-4 mb-8">
                 {[
@@ -67,7 +67,7 @@ export default function BessPage() {
                 ))}
               </ul>
             </div>
-            
+
             <div className="space-y-8">
               <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-xl text-navy-900 mb-6">Technical Specifications</h3>
@@ -98,7 +98,7 @@ export default function BessPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-navy-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-dark-grid opacity-20" />
                 <div className="relative z-10">

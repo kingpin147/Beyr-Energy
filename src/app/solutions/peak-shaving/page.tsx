@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PeakShavingPage() {
   return (
     <div className="bg-white">
-      <section className="bg-hero-gradient pt-32 pb-20 relative overflow-hidden">
+      <section className="page-hero">
         <div className="absolute inset-0 bg-dark-grid opacity-50" />
         <div className="glow-dot w-96 h-96 bg-energy top-0 right-0 opacity-10" />
         <div className="container-wide relative z-10">
@@ -47,7 +47,7 @@ export default function PeakShavingPage() {
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
                 BEYR Energy's Peak Shaving BESS continuously monitors facility power usage. As demand spikes (e.g., when heavy machinery starts up), the BESS instantly discharges, supplying the extra power from the batteries rather than pulling from the utility grid. The grid only sees a smooth, flat load profile.
               </p>
-              
+
               <h3 className="font-display font-bold text-xl text-navy-900 mb-4">Core Applications:</h3>
               <ul className="space-y-4 mb-8">
                 {[
@@ -64,7 +64,7 @@ export default function PeakShavingPage() {
                 ))}
               </ul>
             </div>
-            
+
             <div className="space-y-8">
               <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-xl text-navy-900 mb-6">System Specifications</h3>
