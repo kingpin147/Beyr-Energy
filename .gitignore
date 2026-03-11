@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/temp_reference_repo
 
 # testing
 /coverage

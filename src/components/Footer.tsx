@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-950 text-gray-300">
       {/* Top accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-energy to-transparent opacity-40" />
+      <div className="h-px bg-gradient-to-r from-transparent via-green-500/20 to-transparent" />
 
       {/* Main Footer */}
       <div className="container-wide py-28">
@@ -36,12 +36,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <Link href="/" className="flex items-center gap-3 mb-8 group">
-              <div className="w-10 h-10 rounded-xl bg-energy flex items-center justify-center shadow-green-glow">
+              <div className="w-10 h-10 rounded-xl bg-green-500/90 flex items-center justify-center shadow-lg">
                 <Zap className="w-6 h-6 text-navy-950 fill-navy-950" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-display font-black text-white text-lg">BEYR</span>
-                <span className="font-display font-black text-energy text-lg leading-none">ENERGY</span>
+                <span className="font-display font-black text-white text-lg tracking-tight">BEYR</span>
+                <span className="font-display font-black text-green-500/90 text-lg tracking-tight leading-none uppercase">Energy</span>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-xs sm:max-w-none">

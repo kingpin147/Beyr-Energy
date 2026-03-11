@@ -62,7 +62,7 @@ export default function WhyBeyond() {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 md:py-24 lg:py-32 bg-hero-gradient relative overflow-hidden px-4 sm:px-0">
+    <section ref={ref} className="py-12 md:py-24 bg-hero-gradient relative overflow-hidden px-4 sm:px-0">
       {/* Background */}
       <div className="absolute inset-0 bg-dark-grid" />
       <div className="glow-dot w-[500px] h-[500px] bg-energy top-[-100px] right-[-150px] opacity-10" />
@@ -70,34 +70,36 @@ export default function WhyBeyond() {
 
       <div className="container-wide relative z-10">
         {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <div className="section-label justify-center">
-            <span className="w-8 h-px bg-energy" />
-            Why Beyond Rental
-            <span className="w-8 h-px bg-energy" />
+        <div className={`text-center mb-16 md:mb-24 space-y-4 md:space-y-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className="space-y-2 md:space-y-4">
+            <div className="section-label justify-center">
+              <span className="w-8 h-px bg-energy" />
+              Why Beyond Rental
+              <span className="w-8 h-px bg-energy" />
+            </div>
+            <h2 className="section-title-white max-w-2xl mx-auto">
+              Built for <br />
+              <span className="text-gradient-green uppercase">Industrial Reliability</span>
+            </h2>
           </div>
-          <h2 className="section-title-white max-w-2xl mx-auto mb-4">
-            Built for{" "}
-            <span className="text-gradient-green">Industrial Reliability</span>
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed text-sm sm:text-base px-2">
+          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed text-sm md:text-base px-2">
             When energy reliability is mission-critical, clients across the GCC choose BEYR Energy. Here's why.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           {usps.map((usp, i) => (
             <div
               key={usp.title}
-              className={`glass-card group relative transition-all duration-700 p-6 sm:p-8 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              className={`glass-card group relative transition-all duration-700 p-6 md:p-10 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
               style={{ transitionDelay: `${100 + i * 80}ms` }}
             >
               {/* Icon + Stat */}
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-12 h-12 rounded-xl bg-energy/10 border border-energy/20 flex items-center justify-center group-hover:bg-energy/25 transition-colors duration-300">
-                  <usp.icon className="w-6 h-6 text-energy" />
+              <div className="flex items-start justify-between mb-8">
+                <div className="w-14 h-14 rounded-xl bg-energy/10 border border-energy/20 flex items-center justify-center group-hover:bg-energy/25 transition-colors duration-300">
+                  <usp.icon className="w-7 h-7 text-energy" />
                 </div>
                 <div className="text-right">
                   <div className="text-xl sm:text-2xl font-display font-black text-energy">{usp.stat}</div>
@@ -105,7 +107,7 @@ export default function WhyBeyond() {
                 </div>
               </div>
 
-              <h3 className="font-display font-bold text-white text-base sm:text-lg mb-2 group-hover:text-energy transition-colors duration-200">
+              <h3 className="font-display font-bold text-white text-base sm:text-lg mb-4 group-hover:text-energy transition-colors duration-200">
                 {usp.title}
               </h3>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{usp.desc}</p>

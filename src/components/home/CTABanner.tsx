@@ -18,7 +18,7 @@ export default function CTABanner() {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 md:py-20 bg-gray-50 relative overflow-hidden px-4 sm:px-0">
+    <section ref={ref} className="py-12 md:py-24 bg-gray-50 relative overflow-hidden px-4 sm:px-0">
       {/* Decorative */}
       <div className="absolute inset-0 bg-dark-grid opacity-30" />
 
@@ -35,54 +35,48 @@ export default function CTABanner() {
           {/* Green top bar */}
           <div className="h-1 bg-gradient-to-r from-transparent via-energy to-transparent" />
 
-          <div className="relative z-10 px-10 py-24 sm:px-24 sm:py-32 md:px-32 text-center">
-            <div className="section-label justify-center mb-6">
-              <span className="w-8 h-px bg-energy" />
-              Ready to Power Your Project?
-              <span className="w-8 h-px bg-energy" />
+          <div className="relative z-10 px-6 py-16 md:px-24 md:py-32 lg:px-40 text-center space-y-8 md:space-y-12">
+            <div className="space-y-4 md:space-y-6">
+              <div className="section-label justify-center">
+                <span className="w-8 h-px bg-energy" />
+                Ready to Power Your Project?
+                <span className="w-8 h-px bg-energy" />
+              </div>
+
+              <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white leading-[1.1] uppercase tracking-tighter">
+                Request Your <br />
+                <span className="text-gradient-green">Free Energy Consultation</span>
+              </h2>
             </div>
 
-            <h2 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
-              Request Your{" "}
-              <span className="text-gradient-green">Free Energy Consultation</span>
-            </h2>
-
-            <p className="text-gray-300 text-sm sm:text-lg max-w-xl mx-auto mb-12 leading-relaxed px-4">
+            <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
               Tell us your energy requirements and we'll design a custom rental solution with deployment in as little as 48 hours.
             </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
               <Link
                 href="/contact"
-                className="btn-primary text-sm py-3.5 px-8 shadow-green-glow w-full sm:w-auto justify-center"
+                className="btn-primary group px-10 h-14 flex items-center justify-center font-black uppercase tracking-tight shadow-green-glow w-full sm:w-auto"
               >
-                Request a Quote
-                <ArrowRight className="w-4 h-4" />
+                GET A QUOTE
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="tel:+971000000000"
-                className="btn-secondary text-sm py-3.5 px-8 w-full sm:w-auto justify-center"
+                className="btn-outline-white px-10 h-14 flex items-center justify-center font-black uppercase tracking-tight w-full sm:w-auto"
               >
-                <Phone className="w-4 h-4" />
-                Call Us Now
+                <Phone className="mr-2 w-5 h-5 fill-current" />
+                CALL NOW
               </a>
               <a
                 href="https://wa.me/971000000000?text=Hi%2C%20I%27m%20interested%20in%20a%20quote."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border-2 border-[#25D366] text-[#25D366] font-bold text-sm uppercase tracking-widest hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 px-10 h-14 rounded-lg border-2 border-[#25D366] text-[#25D366] font-black text-sm uppercase tracking-tight hover:bg-[#25D366] hover:text-white transition-all duration-300 w-full sm:w-auto justify-center"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-5 h-5" />
                 WhatsApp
               </a>
-            </div>
-
-            {/* Trust note */}
-            <div className="flex justify-center">
-              <p className="text-gray-500 max-w-sm leading-relaxed text-xs sm:text-base opacity-80">
-                Our energy rental solutions are trusted across 6 major industries throughout the UAE & GCC region.
-              </p>
             </div>
           </div>
         </div>
