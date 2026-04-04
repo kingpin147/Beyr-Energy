@@ -49,13 +49,13 @@ export default function Navbar() {
       <div className="container-wide">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-green-500/90 flex items-center justify-center shadow-lg transition-all duration-300">
-              <Zap className="w-6 h-6 text-navy-950 fill-navy-950" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-display font-black text-white text-lg tracking-tight">BEYR</span>
-              <span className="font-display font-black text-green-500/90 text-lg tracking-tight leading-none uppercase">Energy</span>
+          <Link href="/" className="flex items-center group">
+            <div className="relative h-12 w-auto flex items-center">
+              <img
+                src="/BEYR Energy Logo.png"
+                alt="BEYR Energy Logo"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
           </Link>
 
