@@ -129,7 +129,7 @@ export default function HeroSection() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
             <a
-              href="tel:+971000000000"
+              href="tel:+971559514603"
               className="btn-secondary w-full sm:w-auto justify-center"
             >
               <Phone className="w-4 h-4" />

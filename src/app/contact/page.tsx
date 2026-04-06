@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle, Globe } from "lucide-react";
 
 // Form Schema
 const contactSchema = z.object({
@@ -88,11 +88,11 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="font-display font-bold text-navy-900 text-xl mb-2">Dubai Headquarters</h3>
-                <p className="text-gray-500 leading-relaxed mb-6">Beyond Rental of Alternative Energy Equipment LLC<br />Dubai, United Arab Emirates</p>
+                <p className="text-gray-500 leading-relaxed mb-6">Beyond Rental of Alternative Energy Equipment LLC<br />Office #8, M floor Naif Road- Naif-Deira, Dubai</p>
                 <div className="space-y-4">
-                  <a href="tel:+971000000000" className="flex items-center gap-3 text-gray-600 hover:text-energy transition-colors group/link">
+                  <a href="tel:+971559514603" className="flex items-center gap-3 text-gray-600 hover:text-energy transition-colors group/link">
                     <Phone className="w-4 h-4 text-energy group-hover/link:scale-110 transition-transform" />
-                    +971 00 000 0000
+                    +971 55 951 4603
                   </a>
                   <a href="mailto:info@beyrenergy.com" className="flex items-center gap-3 text-gray-600 hover:text-energy transition-colors group/link">
                     <Mail className="w-4 h-4 text-energy group-hover/link:scale-110 transition-transform" />
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       className={`form-input ${errors.phone ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : ''}`}
-                      placeholder="+971 50 123 4567"
+                      placeholder="+971 55 951 4603"
                       {...register("phone")}
                     />
                     {errors.phone && <p className="text-red-500 text-xs mt-1.5">{errors.phone.message}</p>}
@@ -241,6 +241,56 @@ export default function ContactPage() {
               </form>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Global Partners */}
+      <section className="pb-28">
+        <div className="container-wide">
+          <div className="text-center mb-16">
+            <div className="section-label justify-center">
+              <Globe className="w-4 h-4 text-energy" />
+              Global Partners
+            </div>
+            <h2 className="font-display font-bold text-navy-900 text-3xl md:text-4xl">Our International Network</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                country: "Malaysia",
+                company: "EcoSun Energy Sdn Bhd",
+                phone: "+971 55 951 4603",
+              },
+              {
+                country: "China",
+                company: "Nanjing Yaojie Import and Export Trading Co. Ltd.",
+                phone: "+971 55 951 4603",
+              },
+              {
+                country: "Pakistan",
+                company: "EY Enterprise",
+                phone: "+92 300 3655263",
+              },
+            ].map((partner) => (
+              <div key={partner.country} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-8 h-8 rounded-lg bg-energy/10 text-energy flex items-center justify-center font-bold text-xs uppercase tracking-wider">
+                    {partner.country.substring(0, 2)}
+                  </span>
+                  <h3 className="font-display font-bold text-navy-900 text-lg">{partner.country}</h3>
+                </div>
+                <p className="text-navy-800 font-semibold mb-2">{partner.company}</p>
+                <a 
+                  href={`tel:${partner.phone.replace(/\s/g, '')}`} 
+                  className="flex items-center gap-2 text-sm text-gray-500 hover:text-energy transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  {partner.phone}
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -122,7 +122,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-white font-medium">Head Office</p>
                   <p className="text-sm text-gray-400 leading-relaxed mt-1">
-                    Dubai, United Arab Emirates
+                    Office #8, M floor Naif Road- Naif-Deira, Dubai
                   </p>
                 </div>
               </div>
@@ -131,8 +131,8 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-energy" />
                 </div>
                 <div>
-                  <a href="tel:+971000000000" className="text-sm text-gray-400 hover:text-energy transition-colors">
-                    +971 00 000 0000
+                  <a href="tel:+971559514603" className="text-sm text-gray-400 hover:text-energy transition-colors">
+                    +971 55 951 4603
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Emergency Line</p>
                 </div>
@@ -150,7 +150,7 @@ export default function Footer() {
             </div>
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/971000000000?text=Hi%2C%20I%27m%20interested%20in%20your%20energy%20rental%20solutions."
+              href="https://wa.me/971559514603?text=Hi%2C%20I%27m%20interested%20in%20your%20energy%20rental%20solutions."
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 px-6 py-4 bg-[#25D366]/10 border border-[#25D366]/30 rounded-xl text-[#25D366] text-sm font-semibold hover:bg-[#25D366]/20 hover:border-[#25D366]/50 transition-all duration-300"

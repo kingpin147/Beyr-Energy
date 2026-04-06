@@ -62,14 +62,14 @@ export default function CTABanner() {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:+971000000000"
-                className="btn-outline-white px-10 h-14 flex items-center justify-center font-black uppercase tracking-tight w-full sm:w-auto"
+                href="tel:+971559514603"
+                className="btn-secondary px-8 py-4 sm:py-5 text-base sm:text-lg w-full sm:w-auto justify-center group/btn"
               >
-                <Phone className="mr-2 w-5 h-5 fill-current" />
-                CALL NOW
+                <Phone className="w-5 h-5 mr-3 text-energy group-hover/btn:rotate-12 transition-transform" />
+                +971 55 951 4603
               </a>
               <a
-                href="https://wa.me/971000000000?text=Hi%2C%20I%27m%20interested%20in%20a%20quote."
+                href="https://wa.me/971559514603?text=Hi%2C%20I%27m%20interested%20in%20a%20quote."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-10 h-14 rounded-lg border-2 border-[#25D366] text-[#25D366] font-black text-sm uppercase tracking-tight hover:bg-[#25D366] hover:text-white transition-all duration-300 w-full sm:w-auto justify-center"

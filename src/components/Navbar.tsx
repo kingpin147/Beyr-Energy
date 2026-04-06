@@ -112,10 +112,10 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+971000000000"
+              href="tel:+971559514603"
               className="text-sm font-medium text-gray-300 hover:text-energy transition-colors duration-200"
             >
-              +971 00 000 0000
+              +971 55 951 4603
             </a>
             <Link href="/contact" className="btn-primary">
               GET A QUOTE
@@ -192,7 +192,7 @@ export default function Navbar() {
             </nav>
 
             <div className="mt-auto pt-10 flex flex-col gap-4">
-              <a href="tel:+971000000000" className="btn-secondary w-full justify-center py-4">
+              <a href="tel:+971559514603" className="btn-secondary w-full justify-center py-4">
                 Call Now
               </a>
               <Link href="/contact" className="btn-primary w-full justify-center py-4" onClick={() => setMobileOpen(false)}>

@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 
 export default function FloatingCallButton() {
     const [visible, setVisible] = useState(false);
-    const phoneNumber = "+971000000000";
+    const phoneNumber = "+971559514603";
 
     useEffect(() => {
         const timer = setTimeout(() => {
