@@ -41,7 +41,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || pathname !== "/"
         ? "bg-navy-950/98 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.4)] border-b border-white/5"
         : "bg-transparent"
         }`}
@@ -50,11 +50,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <div className="relative h-12 w-auto flex items-center">
+            <div className="relative h-12 w-auto flex items-center px-4">
+              {/* Logo Glow Effect - Multi-layered for prominence */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white/30 blur-[32px] rounded-full pointer-events-none group-hover:bg-white/50 transition-all duration-700 animate-pulse2" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 blur-[16px] rounded-full pointer-events-none" />
+              
               <img
                 src="/BEYR Energy Logo.png"
                 alt="BEYR Energy Logo"
-                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 w-auto object-contain relative z-10 transition-transform duration-500 group-hover:scale-110"
               />
             </div>
           </Link>
@@ -78,7 +82,7 @@ export default function Navbar() {
                   <div
                     onMouseEnter={() => setSolutionsOpen(true)}
                     onMouseLeave={() => setSolutionsOpen(false)}
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-navy-900/98 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-200 ${solutionsOpen
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 bg-navy-900/98 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-200 ${solutionsOpen
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
                       }`}
